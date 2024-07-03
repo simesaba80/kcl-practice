@@ -1,18 +1,15 @@
+"use client";
+import { useState } from "react";
+import { Hit } from "./dataType";
+import { testData } from "./testData";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const [searchResult, setSearchResult] = useState<Hit[]>(testData);
   return (
     <>
-      <h1>hello world!</h1>
-      <div>
-        <img src="https://s3.ap-northeast-1.wasabisys.com/mastodondb/accounts/avatars/110/236/191/834/042/226/original/1890ab9c43e05a0e.jpg" />
-        <p>
-          どうもフロントエンド勉強中のしめさばです． <br />
-          Goが好きなのでバックエンドの開発をしていることが多いです． <br />
-          皆でWeb開発を頑張ろう！
-        </p>
-        <div>X: @kyusime</div>
-      </div>
+      <p>{testData[0].name}</p>
+      <div>{testData[0].price}円</div>
     </>
   );
 }
