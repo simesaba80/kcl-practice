@@ -8,8 +8,14 @@ export default function Home() {
   const [searchResult, setSearchResult] = useState<Hit[]>(testData);
   return (
     <>
-      <p>{testData[0].name}</p>
-      <div>{testData[0].price}円</div>
+      {searchResult.map((item: Hit) => (
+        <div key={item.index}>
+          <p>{item.name}</p>
+          <div>{item.price}円</div>
+          <img src={item.image.medium} />
+          <img src={item.image.small} />
+        </div>
+      ))}
     </>
   );
 }
